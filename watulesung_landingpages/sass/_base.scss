@@ -1,0 +1,171 @@
+// COLOR VARIABLES
+$color-primary: #283945;
+$color-primary-medium: #384f5f;
+$color-primary-light: #577b94;
+$color-primary-dark: #1c2730;
+
+$color-secondary: #ac9872;
+$color-secondary-dark: #665a45;
+$color-secondary-light: #f5dcad;
+
+$color-grey-light-1: #dadfe2;
+$color-grey-light-2: #c2c7ca;
+$color-grey-dark-medium:#888a8b;
+
+$color-grey-dark-1: #353638;
+$color-grey-dark-2: #4c4f52;
+$color-grey-dark-3: #5d5f63;
+
+//mediaqueries breakpoints
+$bp-largest: 80em;
+$bp-large: 64em;  
+$bp-medium: 47em; 
+$bp-small: 36.5em; 
+$bp-smaller: 25em; 
+
+// FONT VARIABLES
+$font-primary: 'Jost', sans-serif;
+$font-headers: 'Playfair Display', serif;
+$shadow-light: 0 1rem 4rem rgba(90, 90, 90, 0.295);
+$shadow-lighter: 0 1rem 4rem rgba(255, 255, 255, 0.116);
+$shadow-dark:0 1rem 4rem rgba(255, 255, 255, 0.349);
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: initial;
+}
+
+::selection {
+    color: white;
+    background: $color-secondary;
+  }   
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    @media only screen and (max-width:$bp-largest) {font-size: 55%;}
+    @media only screen and (max-width:$bp-large) {font-size: 50%;}
+}
+
+body{
+    font-family: $font-primary;
+    color:$color-grey-dark-2;
+    background-color: #f9fbfc;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 10rem repeat(10,1fr);
+    grid-template-rows: 10rem repeat(2,70rem) repeat(5,min-content);
+    @media only screen and (max-width:$bp-small) {
+        grid-template-columns: 7rem repeat(10,1fr);
+        grid-template-rows: 7rem repeat(2,68rem) repeat(5,min-content);
+    }
+}
+
+.btn{
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all .3s;
+    font-size: 1.7rem;
+    outline: none;
+    cursor: pointer;
+    &-primary{
+        color: $color-primary;
+        text-align: center;
+        &::after{
+            width: 0;
+            margin: 0 auto;
+            content: "";
+            display: block;
+            height: 2px;
+            background-color: $color-primary;
+            text-align: center;
+            transition: all .3s;
+        }
+        &:hover{
+            &::after{width: 100%;}
+            transform: scale(1.05);  
+        }
+    }
+    &-secondary{
+        border-bottom: 1px solid currentColor;
+        margin: 3rem 0;
+        padding: 0 .5rem;
+        color: $color-secondary;
+        &:hover{
+            background-color: $color-secondary;
+            color: white;
+        }
+    }
+}
+
+
+.heading-1{
+    font-family: $font-headers;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 5.5rem;
+    line-height: 130%;
+    color: $color-primary;
+    padding: 3rem 0 5rem 0;
+}
+.heading-2{
+    font-family: $font-headers;
+    color: $color-primary;
+    font-weight:600;
+    letter-spacing: 2px;
+    font-size: 4.5rem;
+    padding-bottom: 3rem;
+    @media only screen and (max-width:$bp-medium) {font-size: 3.5rem;}
+}
+// .heading-3{
+//     font-weight: 700;
+//     font-size: 1.8;
+//     letter-spacing: 1px;
+//     color: $color-secondary-light;
+//     margin-bottom: 2rem;
+//     @media only screen and (max-width:$bp-medium) {font-size: 1.8rem;}
+// }
+// .heading-4{
+//     padding: 1rem 0;
+//     font-size: 1.8rem;
+//     color: $color-grey-light-2;
+//     background-color: #170128;
+// }
+
+// p{
+//     font-size: 1.5;
+//     color: $color-grey-light-2;
+// }
+// .heading-5{
+//     letter-spacing: 1px;
+//     padding: 1rem 0;
+//     font-size: 1.6rem;
+//     // @media only screen and (max-width:$bp-medium) {font-size: 1.6rem;}
+// }
+.img-span{
+    font-family: serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 0;
+    width: 0;
+    padding:4rem;
+    font-size: 3rem;
+    background-color: $color-secondary;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+}
+

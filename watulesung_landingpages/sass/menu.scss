@@ -1,0 +1,73 @@
+.menu{
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    padding: 15rem 12rem 0 0;
+    @media only screen and (max-width:$bp-medium) {padding-right: 0rem;}
+    &-text{
+        padding-left: 15%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        h2{padding-right: 3rem; flex: 0 0 55%;}
+        @media only screen and (max-width:$bp-medium) {padding-right: 2rem;}
+        @media only screen and (max-width:$bp-small){padding: 0 6rem; flex-direction: column;}
+    }
+    &-imgs-box{
+        padding-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+        @media only screen and (max-width:$bp-medium) {flex-wrap: wrap; height: auto; &:not(:first-child){align-items: baseline;}}
+    }
+    &-img-box{
+        height: 18vw;
+        position: relative;
+        transition: all .5s;
+        overflow: hidden;
+        @media only screen and (max-width:$bp-medium) {
+            height: auto;
+            &-1{width: 35%; align-self: start; order: 1;}
+            &-2{width: 59%; order: 2;}
+            &-3{width: 36%; order: 4;}
+            &-4{width: 57%; order: 3; margin-top: .5rem;}
+        }
+        &:not(:last-child){
+            margin-right: 3rem;
+            @media only screen and (max-width:$bp-medium) {margin-right: 0;}
+        }
+        span{
+            z-index: 10;
+            opacity: 0;
+            transition: all .5s;
+        }
+        &:hover{
+            background-image: linear-gradient(#28394567,#28394567);
+            span{
+                opacity: 1;
+            }
+            .menu-img-background{
+                opacity: 1;
+            }
+        }
+    }
+    &-img{
+        height: 100%;
+        @media only screen and (max-width:$bp-medium) {
+            width: 100%;
+            height: 100%;
+        }
+        
+        &-background{
+            transition: all .5s;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            color: white;
+            font-size: 3rem;
+            background-image: linear-gradient(#283945d5,#283945d5);
+            opacity: 0;
+            h5{padding: 3rem; text-transform: uppercase;}
+        }
+    }
+}
